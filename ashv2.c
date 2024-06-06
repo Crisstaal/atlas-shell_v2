@@ -11,8 +11,7 @@ int main(void)
 	char **args;
 	int status;
 
-	do
-	{
+	do {
 		display_prompt();
 		input = read_input();
 		args = parse_input(input);
@@ -20,8 +19,6 @@ int main(void)
 
 		free(input);
 		free(args);
-	}
-	while (status);
-
-	return (EXIT_SUCCESS);
+	} while (status);
+		return (EXIT_SUCCESS);
 }
