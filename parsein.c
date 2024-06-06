@@ -9,7 +9,7 @@
 char **parse_input(char *input)
 {
 	int bufsize = INPUT_SIZE, position = 0;
-	char **tokens = malloc(bufsize * sizeof(char*));
+	char **tokens = malloc(bufsize * sizeof(char *));
 	char *token;
 
 	if (!tokens)
@@ -27,7 +27,7 @@ char **parse_input(char *input)
 		if (position >= bufsize)
 		{
 			bufsize += INPUT_SIZE;
-			tokens = realloc(tokens, bufsize * sizeof(char*));
+			tokens = realloc(tokens, bufsize * sizeof(char *));
 			if (!tokens)
 			{
 				fprintf(stderr, "allocation error\n");
