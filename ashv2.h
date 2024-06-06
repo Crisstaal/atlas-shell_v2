@@ -14,6 +14,8 @@
 #define INPUT_SIZE 1024
 #define TOKEN_DELIMITERS " \t\r\n\a"
 
+extern char **environ;
+
 /**
  * Function declarations
 */

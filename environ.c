@@ -8,7 +8,6 @@
  */
 int shell_env(char **args)
 {
-	extern char **environ;
 	char **env = environ;
 
 	(void)args;
