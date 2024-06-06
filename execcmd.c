@@ -36,7 +36,7 @@ char *search_path(char *command)
 		sprintf(full_path, "%s/%s", dir, command);
 		if (stat(full_path, &st) == 0 && (st.st_mode & S_IXUSR))
 		{
-			return full_path;
+			return (full_path);
 		}
 		dir = strtok(NULL, ":");
 	}
@@ -56,7 +56,6 @@ int execute_command(char **args)
 	pid_t pid;
 	int status;
 	char *path;
-	extern char **environ;
 
 	if (args[0] == NULL)
 		return (1);
