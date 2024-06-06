@@ -27,14 +27,31 @@ int execute_command(char **args);
 /**
  * Built-ins
 */
+
+/**
+ * shell_cd - Changes the current directory
+ * @args: List of arguments
+ *
+ * Return: 1 to continue executing
+ */
 int shell_cd(char **args);
+
 int shell_exit(char **args);
 int shell_env(char **args);
 
 /**
  * Utilities
 */
+
+/**
+ * _strcmp - Compares two strings
+ * @s1: First string
+ * @s2: Second string
+ *
+ * Return: Negative if s1 < s2, 0 if s1 == s2, Positive if s1 > s2
+ */
 int _strcmp(const char *s1, const char *s2);
+
 char *search_path(char *command);
 
 #endif
