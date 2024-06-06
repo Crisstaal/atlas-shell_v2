@@ -1,1 +1,58 @@
-# HSHv2 MANUAL
+.TH hsh 1 "June 2024" "v2.0" "A Shell v2 Manual"
+.SH NAME
+hsh \-
+
+.SH SYNOPSIS
+.B hsh - A simple UNIX command line interpreter
+.br
+
+.SH DESCRIPTION
+.B hsh
+is a simple UNIX command line interpreter that provides a basic shell environment. It can execute commands with arguments, handle environment variables, and use some built-in commands.
+
+.SH USAGE
+.B hsh
+.br
+After launching, the shell will display a prompt and wait for the user to type a command. 
+
+.SH FEATURES
+.TP
+.B Built-in Commands:
+The following built-in commands are implemented:
+.RS
+.TP
+.B cd [path]
+Changes the current directory to the specified path. If no argument is provided, it changes to the home directory.
+.TP
+.B exit [status]
+Exits the shell with the specified status. If no status is provided, it exits with the status of the last executed command.
+.TP
+.B env
+Prints the current environment variables.
+.RE
+
+.TP
+.B Executing Commands:
+Commands entered at the prompt are executed by searching the directories listed in the PATH environment variable. If an executable file is found, it is executed with the provided args.
+
+.SH EXAMPLES
+.TP
+.B Running a command:
+.RS
+$ hsh
+($) /bin/ls
+hsh exit.c ashv2.c etc.c
+($) exit
+$
+.RE
+
+.TP
+.B Changing directory:
+.RS
+$ hsh
+($) cd /usr
+($) pwd
+/usr
+($) exit
+$
+.RE
