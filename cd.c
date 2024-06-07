@@ -8,9 +8,19 @@
  */
 int shell_cd(char **args)
 {
+	char *home = getenv("HOME");
+
 	if (args[1] == NULL)
 	{
-		fprintf(stderr, "hsh: expected argument to \"cd\"\n");
+		if (home == NULL)
+		{
+			fprintf(stderr, "hsh: HOME not set\n");
+			return (1);
+		}
+		if (chdir(home) != 0)
+		{
+			perror("hsh");
+		}
 	}
 	else
 	{
